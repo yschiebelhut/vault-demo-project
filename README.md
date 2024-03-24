@@ -256,7 +256,7 @@ postgres=# \du
   + kann auch als SaaS-Dienst von HashiCorp gebucht werden
 + "Eierlegende Wollmilchsau": aufgrund der vielen Authentifizierungsmethoden, Secret Engines und Plugins, kann Vault extrem vielseitig eingesetzt werden
 
-### Contra
+### Negative Aspekte
 - Token-Lifecycle unter Umständen sehr aufwändig zu implementieren
   - allerdings: Wie sähe es erst ohne Vault aus?
 - Einstellungen müssen gut durchdacht werden
