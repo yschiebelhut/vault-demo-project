@@ -1,0 +1,66 @@
+{
+    "time": "2024-03-24T16:59:01.658269954Z",
+    "type": "response",
+    "auth": {
+        "client_token": "hmac-sha256:e353f84c1d3c0e153a911c85ffeff6c658ad812bec7da684c4e35c00c1640f36",
+        "accessor": "hmac-sha256:59bb81ea38a046749d48d309512c2efa508a69d37b9fea50ff8e9ef28f61ab23",
+        "display_name": "userpass-b",
+        "policies": [
+            "default",
+            "global-reader"
+        ],
+        "token_policies": [
+            "default",
+            "global-reader"
+        ],
+        "policy_results": {
+            "allowed": true,
+            "granting_policies": [
+                {
+                    "name": "global-reader",
+                    "namespace_id": "root",
+                    "type": "acl"
+                }
+            ]
+        },
+        "metadata": {
+            "username": "b"
+        },
+        "entity_id": "1a947ebc-cfaa-3c79-3371-955498d8dd53",
+        "token_type": "service",
+        "token_ttl": 2764800,
+        "token_issue_time": "2024-03-24T16:58:56Z"
+    },
+    "request": {
+        "id": "55e9043f-f9ca-97bc-73b5-0cacd358d4a6",
+        "client_id": "1a947ebc-cfaa-3c79-3371-955498d8dd53",
+        "operation": "read",
+        "mount_point": "database/",
+        "mount_type": "database",
+        "mount_accessor": "database_0372b6f6",
+        "mount_running_version": "v1.15.2+builtin.vault",
+        "mount_class": "secret",
+        "client_token": "hmac-sha256:a5d4c0f09ec28c6de4d133b2d5b2c9204d44a52ad76cd8bed1786961804a2218",
+        "client_token_accessor": "hmac-sha256:59bb81ea38a046749d48d309512c2efa508a69d37b9fea50ff8e9ef28f61ab23",
+        "namespace": {
+            "id": "root"
+        },
+        "path": "database/creds/readonly",
+        "remote_address": "100.64.0.46",
+        "remote_port": 35810
+    },
+    "response": {
+        "mount_point": "database/",
+        "mount_type": "database",
+        "mount_accessor": "database_0372b6f6",
+        "mount_running_plugin_version": "v1.15.2+builtin.vault",
+        "mount_class": "secret",
+        "secret": {
+            "lease_id": "database/creds/readonly/3IMCW4egtYwfPXT4mWqQ2Hcy"
+        },
+        "data": {
+            "password": "hmac-sha256:331e99b8ba0bff41af244e4768e767be5cba0e7527977dc048451a5cbdecca09",
+            "username": "hmac-sha256:71a15b857dd7d5d8f75be547e9710c98d23a31ef1290eb2740590066f23cae97"
+        }
+    }
+}

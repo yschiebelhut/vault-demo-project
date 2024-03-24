@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: db-setup
+  labels:
+    name: db-setup
+spec:
+  containers:
+  - name: db-setup
+    image: yschiebelhut/db-setup:latest
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"

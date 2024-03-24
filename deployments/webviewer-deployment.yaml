@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webviewer
+spec:
+  selector:
+    matchLabels:
+      app: webviewer
+  template:
+    metadata:
+      labels:
+        app: webviewer
+    spec:
+      containers:
+      - name: webviewer
+        image: yschiebelhut/webviewer
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
+        env:
+          - name: APPROLE_ROLE_ID
+            valueFrom:
+              secretKeyRef:
+                name: webviewer-approle
+                key: role-id
+          - name: APPROLE_SECRET_ID
+            valueFrom:
+              secretKeyRef:
+                name: webviewer-approle
+                key: secret-id
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webviewer
+spec:
+  selector:
+    app: webviewer
+  ports:
+  - port: 8080
+    targetPort: 8080
+    protocol: TCP
+  type: ClusterIP
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: webviewer
+  labels:
+    name: webviewer
+spec:
+  rules:
+  - host: REPLACE_WEBVIEWER_ADDR
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: webviewer
+            port: 
+              number: 8080
